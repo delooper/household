@@ -21,8 +21,8 @@ difference(){
         translate([W/2,0,0]) rotate([0,0,90]) rotate([90,0,90]) linear_extrude(height=L) polygon(Opoints);
         linear_extrude(height=3) rounded_square( [23.75,54.75] );
     }
-    color("green") translate([10,8,2.2]) linear_extrude(height=2) scale(0.5) rotate([0,0,90]) text("Never Forget");
-    color("red") translate([16,22,2.2]) linear_extrude(height=2) scale(0.2) rotate([0,0,90]) text("Hamster");
+    color("green") translate([10,8,2.1]) linear_extrude(height=2) scale(0.5) rotate([0,0,90]) text("Never Forget");
+    color("red") translate([16,22,2.1]) linear_extrude(height=2) scale(0.2) rotate([0,0,90]) text("Hamster");
 }
 
 // HOOK FLANGE //2.5 should be 1.5
@@ -34,9 +34,9 @@ translate([W/2-HookW/2,L,0]) rotate([90,0,90]) linear_extrude(height=HookW) poly
 // CLIP
 ClipW = 12;
 
-Cpoints = [ [0,0], [1.5,0], [1.5,-7.2], [1.2,-7.5], [-0.8,-7.5], [-1,-7.4], [-3.5,-3], 
-                   [-3.5,1], [-2,1], [-2,-3], 
-                   [-0.3,-6], [-0.1,-6], [0,-5.8] ];
+Cpoints = [ [0,0], [1.5,0], [1.5,-6.6], [1.0,-7.4], [-0.4,-7.4], [-1.2,-6.8], [-3.5,-3], 
+                   [-3.5,1], [-2.2,1], [-2.2,-3], 
+                   [-0.4,-6], [-0.1,-6], [0,-5.8] ];
 translate([W/2-ClipW/2,0,0]) rotate([90,0,90])
 union(){
     linear_extrude(height=ClipW) polygon(Cpoints);
