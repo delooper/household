@@ -10,14 +10,14 @@ tDEPTH = 2; // Depth into track
 tWIDTH = 8; // track width
 
 round_rad = 1.6; // rounding-the-corners radius
-hole_diam = 5; // diameter of drilled-out hole
+hole_diam = 6; // diameter of drilled-out hole
 
 /** RECESS for metal nut **/
-recess_depth = 0; // depth of recess for metal nut, if you need. Set to zero if no recess.
+recess_depth = 1.5; // depth of recess for metal nut, if you need. Set to zero if no recess.
 recess_sides = 6; // how many sides should the recess have? Must be even. Typically 6 or 4.
-recess_width = 10; // width of the recess head, i.e. size of wrench that fits the nut.
+recess_width = 8.04; // width of the recess head, i.e. size of wrench that fits the nut.
 
-RCT = 80; // number of points used in quarter-circle rounding
+RCT = 120; // number of points used in quarter-circle rounding
 PI2 = 90;  // pi over 2.
 
 if (recess_sides % 2 != 0) echo("recess_sides not even.");
