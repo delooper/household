@@ -1,4 +1,5 @@
 /** Simple Parametric t-nut **/
+// 1.003 in black
 
 //$fn=100;
 

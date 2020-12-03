@@ -1,4 +1,5 @@
 /** Dad's counting apparatus.
+// 1.003 in black
 
 Here’s what I can use - three “pies" about 75 mm diameter and 4 mm thick.
 

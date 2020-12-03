@@ -1,5 +1,6 @@
 echo("Remote control cover for Sharp AQUOS TV. LC-60LE65OU, although this might fit other models.");
 // if clip is too stiff consider making it thinner. i.e. reduce HookW variable.
+// Print 1: 1.003 black.
 
 $fn=200;
 
@@ -21,8 +22,10 @@ difference(){
         translate([W/2,0,0]) rotate([0,0,90]) rotate([90,0,90]) linear_extrude(height=L) polygon(Opoints);
         linear_extrude(height=3) rounded_square( [23.75,54.75] );
     }
-    color("green") translate([10,8,2.1]) linear_extrude(height=2) scale(0.5) rotate([0,0,90]) text("Never Forget");
-    color("red") translate([16,22,2.1]) linear_extrude(height=2) scale(0.2) rotate([0,0,90]) text("Hamster");
+    color("green") translate([10,5,2.1]) linear_extrude(height=2) scale(0.5) 
+    rotate([0,0,90]) text("Hamsters have");
+    color("red") translate([16,22,2.1]) linear_extrude(height=2) scale(0.2) 
+    rotate([0,0,90]) text("Stinky butts");
 }
 
 // HOOK FLANGE //2.5 should be 1.5

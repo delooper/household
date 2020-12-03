@@ -1,5 +1,6 @@
 /** Poincare Duality Teaching Aid **/ 
 /** Clone of my old TinkerCAD model **/
+// 1.003 in black
 
 RES = 200;
 
