@@ -1,6 +1,6 @@
 VR = 0.2; // vertex radius
 RT = 0.14; // rod thickness
-textstr="ROMS"; 
+textstr="Icosahedron"; 
 
 $fn=120;
 
@@ -72,7 +72,7 @@ module text_corner(f, i,j,k, COL) {
     M = transpose_3([V1,V2,V3]);
 
     translate(C[FL[f][i]]) multmatrix(M)
-    color(COL) rotate([180,0,0]) translate([-0.86,0.02,-0.01]) 
+    color(COL) rotate([180,0,0]) translate([-0.98,0.02,-0.01]) 
         linear_extrude(height=0.02) scale(0.8) text(textstr, 
         font="Berenis ADF Pro:style=Bold", size=0.09);
 }

@@ -1,6 +1,6 @@
-VR = 0.2; // vertex radius
-RT = 0.14; // rod thickness
-textstr="ROMS"; 
+VR = 0.22; // vertex radius
+RT = 0.12; // rod thickness
+textstr="Octahedron"; 
 
 $fn=120;
 
@@ -36,14 +36,15 @@ difference(){
 hull() 
 
 //octohedron
- polyhedron(points=[[1, 0, 0], [0, 1, 0], [0, 0, 1], [-1, 0, 0], [0, -1, 0], [0, 0, -1]], faces=[[0, 2, 1], [0, 5, 1], [0, 4, 2], [0, 5, 4], [1, 3, 2], [1, 5, 3], [2, 4, 3], [3, 5, 4]]);
+ polyhedron(points=[[1, 0, 0], [0, 1, 0], [0, 0, 1], [-1, 0, 0], [0, -1, 0], [0, 0, -1]], 
+    faces=[[0, 2, 1], [0, 5, 1], [0, 4, 2], [0, 5, 4], [1, 3, 2], [1, 5, 3], [2, 4, 3], [3, 5, 4]]);
 }
-text_corner(0, 2, 1, 0, "red");
-text_corner(1, 0, 1, 2, "red");
-text_corner(2, 2, 1, 0, "red");
+text_corner(0, 0, 1, 2, "red");
+text_corner(1, 2, 1, 0, "red");
+text_corner(2, 0, 1, 2, "red");
 text_corner(3, 0, 1, 2, "red");
 text_corner(4, 2, 1, 0, "red");
-text_corner(5, 0, 1, 2, "red");
+text_corner(5, 2, 1, 0, "red");
 text_corner(6, 0, 1, 2, "blue");
 text_corner(7, 2, 1, 0, "blue");
 }
@@ -61,9 +62,9 @@ module text_corner(f, i,j,k, COL) {
     M = transpose_3([V1,V2,V3]);
 
     translate(C[FL[f][i]]) multmatrix(M)
-    color(COL) rotate([180,0,0]) translate([-0.9,0.015,-0.01]) 
-        linear_extrude(height=0.02) scale(0.9) text(textstr, 
-        font="Berenis ADF Pro:style=Bold", size=0.09);
+    color(COL) rotate([180,0,0]) translate([-0.98,0.015,-0.01]) 
+        linear_extrude(height=0.02) scale(0.75) text(textstr, 
+        font="Berenis ADF Pro:style=Bold", size=0.08);
 }
 
 

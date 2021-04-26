@@ -18,6 +18,7 @@ cR = TH/2;
 
 BR = 5; // radius of major bend.
 sL = 35; // secondary length (green)
+pL = 150; // primary length (red)
 
 /** CONSTRUCTION **/
 
@@ -26,14 +27,14 @@ module mainLen() {
   difference() {
     union() {
         // top cap
-        translate([0,0,140]) rotate([0,0,180]) rotate([90,0,0])
+        translate([0,0,pL]) rotate([0,0,180]) rotate([90,0,0])
             rotate_extrude(angle=180, $fn=RES) intersection() { 
                 sPro();
                 polygon([[0,cR], [BW/2,cR], [BW/2, -H-Ro], [0,-H-Ro]]);
             }
 
         // main vertical length, in red.
-        color("red") linear_extrude(height=140) sPro();
+        color("red") linear_extrude(height=pL) sPro();
 
         // main bend.
         translate([0,-H-Ri-TH-BR,0]) rotate([0,0,90]) rotate([-90,0,0])
@@ -54,17 +55,19 @@ module mainLen() {
            }
         
         }
-      translate([0,-20,140]) rotate([0,0,180]) rotate([90,0,0]) cylinder(h=20, r1=3, r2=3, $fn=RES);
+      translate([0,-20,pL]) rotate([0,0,180]) rotate([90,0,0]) cylinder(h=20, r1=3, r2=3, $fn=RES);
       } 
    }
 
 mainLen();
 
+/** items specific to the grabber **/
 oTH = 2.8; // thickness of grabber
 hD = 25.5; // depth
-hTH = 9.3; // hand thickness i.e. thickness of Wii sensor bar
+hTH = 9.37; // hand thickness i.e. thickness of Wii sensor bar
 hW = BW; // how wide to make the hand.  Anything bigger than BW should suffice.
-
+dotR = 0.8; // dot radius on grabber. 
+   
 // grabber hand thinggy. Is pre-extruded.
 module hPro(){
     STP = 7;
@@ -73,8 +76,8 @@ module hPro(){
 
         union() {
         linear_extrude(height=hW) grabPoly();
-        for (i=[0:STP]) if (i!=0 && i!=STP) color("blue") translate([-hD,hTH/2,DELX*i]) sphere(r=0.4, $fn=RES); 
-        for (i=[0:STP]) if (i!=0 && i!=STP) color("blue") translate([-hD,-hTH/2,DELX*i]) sphere(r=0.4, $fn=RES); 
+        for (i=[0:STP]) if (i!=0 && i!=STP) color("blue") translate([-hD,hTH/2,DELX*i]) sphere(r=dotR, $fn=RES); 
+        for (i=[0:STP]) if (i!=0 && i!=STP) color("blue") translate([-hD,-hTH/2,DELX*i]) sphere(r=dotR, $fn=RES); 
         }
 }
 
